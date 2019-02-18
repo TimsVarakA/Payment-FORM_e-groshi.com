@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Payment for orders</title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<!-- desktop -->
+	<link href="css/mobile.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width:610px)">
+	<!-- mobile -->
+	
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jqery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script type="text/javascript" src="js/jquery.groupinputs.js"></script>
+	
+</head>
+  <body>
+  <div class="wrapper">
+	  <div class="header">
+		  <a href="#" id="logo" target="_blank"></a><a href="" id="logo1" target="_blank"></a>
+	  </div>
+    <div class="content">
+      <div class="p_page">
+          <div class="lang">
+          	<a href="" id="ru" title="RU" ></a>
+            <a href="" id="ua" title="UA"></a>
+            <a href="" id="en" title="EN" class="active"></a>
+            </div>
+        <h1>Payment for orders</h1>
+        <div class="info">
+          <div class="line">
+            <span class="name">Company</span>
+            <span class="value"><strong>Test Company</strong></span>
+          </div>
+          <div class="line">
+            <span class="name">Order number</span>
+            <span class="value">123456</span>
+          </div>
+          <div class="line" style="padding-bottom:10px">
+            <span class="name">Description</span>
+            <span class="value">Payment request</span>
+          </div>
+          <div class="line">
+            <span class="name" style="padding-top:3px">Total</span>
+            <span class="price">454.00 грн.</span>
+          </div>
+        </div>
+        <div class="push" style="height:15px"></div>
+		<div class="spin"></div>
+        <div class="card">
+          <div class="namecard_rekarring">Vasya Pupkin</div>
+          <div class="numbercard_rekarring">462773******2907</div>
+		  
+             <div id="img"></div>
+			
+          <form action="" name="formnumber" id="form">
+            <div class="cod">
+            <a class="help" onmouseout="closeCard();" onmouseover="openCard(event);" style="vertical-align:bottom; cursor:pointer;"></a>
+              <span> CVC2/CVV2:</span>
+              <input autofocus type="password" autocomplete="off" maxlength="3" pattern="[0-9]*" onkeyup="if(this.value.length >= 3){document.getElementById('button').focus();}"  />
+            </div>
+            <a href="" onClick=" document.getElementById('form').submit();" id="button">Pay</a>
+          </form>
+        </div>
+        <div class="push" style="height:5px"></div>
+		
+		<div class="support">
+				In case of unsuccessful payment, please contact Platon Customer Support Service by number: <br>
+				<strong>+38(044)339-99-04</strong>	or email us
+				<a href="http://support.platon.ua/open.php">support@platonline.com</a>
+		</div>
+        <div class="ip">
+          <span class="color">*</span>Your IP address is logged for fraud prevention. <br>
+          <span class="color">*</span>Fraud will be prosecuted to the fullest extent of the law. 
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>  
+    </div>
+	  <div class="footer">
+		  <span class="comodo"></span>
+		  <span class="copyright">© Platon <?php echo date('Y')?>, «Platezhy Online» Ltd<br> 22 Office, 10B Vozdvigenskaya Str, Kiev</span>
+	  </div>
+<div id="help_card">
+    <h3>How to find the CVV / CVC on your credit card</h3><br>
+    <p>The CVV / CVC is used to help validate that a genuine card is being used during a transaction. The credit card company uses those codes to verify that the person making this purchase actually has the credit card in their possession. It is required for online transactions starting on January 1st, 2003.</p>
+    <p>With a Visa or Master Card the CVV/CVC is a three-digit security code printed on the back side of the card.</p>
+    <br>
+  <div style="text-align: center;"><img src="images/help_card.png" width="165" height="103" /></div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,798 @@
+
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  color: #3c4448;
+  min-width: 315px;
+  height: 100%;
+  background-color: #fff;
+}
+.header {
+  margin-top: 15px;
+  height: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.logo-mer {
+  width: 185px;
+  height: 80px;
+  float: left;
+}
+.logo-mer img {
+  max-height: 100%;
+}
+.logo-mer:focus {
+  outline: transparent;
+}
+button:focus{
+  outline: transparent;
+}
+img:focus {
+  outline: transparent;
+}
+a:focus {
+  outline: transparent;
+}
+.logo-platon {
+  width: 185px;
+  height: 45px;
+  float: right;
+  margin-top: 20px;
+}
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.content {
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+.p_page {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+h1 {
+  font-size: 22px;
+  color: #208648;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  display: block;
+  font-weight: normal;
+  float: left;
+}
+.lang {
+  top: 5px;
+  overflow: hidden;
+  float: right;
+  margin-right: 10px;
+}
+.lang a {
+  height: 16px;
+  width: 16px;
+  display: block;
+  float: left;
+  margin-right: 3px;
+  border-radius: 16px;
+  box-shadow: 0 0 1px #CCCCCC;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.selected {
+  border: solid 1px #208648;
+}
+.img {
+  background-image: url(../images/lang.png);
+}
+.ru {
+  background-position: left top;
+}
+.ua {
+  background-position: -16px top;
+}
+.en {
+  background-position: -32px top;
+}
+.verif-info {
+  float: left;
+  color: #878e91;
+  font-style: italic;
+  font-size: 12px;
+  margin: 10px 0;
+}
+.info {
+  width: 100%;
+  padding-bottom: 3px;
+  font-size: 12px;
+  color: #3c4448;
+  padding-top: 15px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #a6a6a6;
+}
+h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+.line {
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+.name {
+  color: #a6a6a6;
+  width: 100px;
+  display: block;
+  float: left;
+}
+.value {
+  font-style: italic;
+  display: block;
+  float: left;
+  width: 440px;
+}
+.price {
+  font-size: 14px;
+  color: #208648;
+  font-style: italic;
+  display: block;
+  font-weight: 700;
+}
+.spin {
+  width: 64px;
+  height: 64px;
+  background-image: url(../images/spinner.gif);
+  position: absolute;
+  z-index: 500;
+  display: none;
+  left: calc(50% - 32px);
+  top: calc(50% - 32px);
+  background-position: center center;
+}
+.infocard_rekarring {
+  position: absolute;
+  left: 80px;
+  top: 55px;
+}
+.infocard {
+  top: 15px;
+}
+.tabs__btns {
+  margin: 10px 0;
+}
+button {
+  width: auto;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 15px;
+  background: #e7e7e7;
+  vertical-align: top;
+  display: inline-block;
+  border: 1px solid #d5d5d5;
+  outline: none;
+  cursor: pointer;
+  color: #878e91;
+  font-weight: 700;
+}
+button.active {
+  background: #fff;
+  position: relative;
+  border: 1px solid #e9e9e9;
+  border-bottom: 0;
+  box-shadow: inset 0px 2px 2px 0px #bcbcbc;
+  outline: none;
+  cursor: pointer;
+}
+.payment img {
+  height: 25px;
+  outline: transparent;
+  border: none;
+  padding: 2px;
+  vertical-align: middle;
+}
+/*card*/
+.card {
+  display: none;
+  height: 325px;
+  position: relative;
+}
+.card_ver {
+  display: block;
+  height: 325px;
+  position: relative;
+}
+.card.visible {
+  display: block;
+}
+.card_top {
+  width: 380px;
+  height: 200px;
+  display: block;
+  float: left;
+  background-color: #208648;
+  border-radius: 25px;
+  position: relative;
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 199, 118, 1);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(0, 199, 118, 1);
+  box-shadow: 5px 5px 0px 0px rgba(0, 199, 118, 1);
+}
+.card_bg {
+  width: 380px;
+  height: 200px;
+  display: block;
+  float: right;
+  margin-right: 6px;
+  background-color: #208648;
+  border-radius: 25px;
+  position: relative;
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 199, 118, 1);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(0, 199, 118, 1);
+  box-shadow: 5px 5px 0px 0px rgba(0, 199, 118, 1);
+}
+.numbercard,
+.datecard {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 60px;
+  font-size: 15px;
+  color: #3d3d3d;
+}
+.datecard {
+  margin-top: 20px;
+  height: 47px;
+}
+#card_num,
+#card_exp_month,
+#card_exp_year {
+  width: 90%;
+  background-color: #fff;
+  border: 2px solid transparent;
+  height: 44px;
+  line-height: 44px;
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 0 15px;
+  color: #3d3d3d;
+  border-radius: 10px;
+}
+#card_num:focus,
+#card_exp_month:focus,
+#card_exp_year:focus {
+  outline: transparent;
+  border: 2px solid #FFD920;
+}
+input[type=tel],
+input[type=password] {
+  font-size: 15px;
+}
+.mps {
+  position: absolute;
+  width: 45px;
+  height: 30px;
+  top: 68px;
+  right: 25px;
+}
+.cards img {
+  display: block;
+  width: 45px;
+  height: 30px;
+  top: 68px;
+  left: 370px;
+  background: url(../images/card.png) no-repeat;
+}
+.cards.hide {
+  display: none;
+}
+.cards.show {
+  display: block;
+}
+.payment__card {
+  position: absolute;
+  width: 45px;
+  height: 30px;
+  top: 68px;
+  left: 370px;
+}
+.visa img {
+  display: none;
+  width: 52px;
+  height: 45px;
+  margin-top: -8px;
+  margin-left: -4px;
+}
+.visa.show img {
+  display: block;
+}
+.mastercard img {
+  display: none;
+  width: 52px;
+  height: 45px;
+  margin-top: -8px;
+  margin-left: -4px
+}
+.mastercard.show img {
+  display: block;
+}
+.maestro img {
+  display: none;
+  width: 60px;
+  height: 43px;
+  margin-top: -7px;
+  margin-left: -8px;
+}
+.maestro.show img {
+  display: block;
+}
+#card_exp_month {
+  width: 55px;
+  float: left;
+}
+#card_exp_year {
+  width: 110px;
+  float: left;
+}
+#slash {
+  display: block;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 10px;
+  float: left;
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  font-size: 18px;
+}
+.line_bg {
+  background-color: #000;
+  height: 55px;
+  margin-top: 50px;
+}
+.info__cvv {
+  position: absolute;
+  right: 4px;
+  top: 141px;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  padding-left: 1px;
+  line-height: 16px;
+  color: #3d3d3d;
+  text-align: center;
+  border: 1px solid #3d3d3d;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.info__cvv .info__cvv_card {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 100%;
+  width: 230px;
+  height: 137px;
+  z-index: -1;
+  border: 2px solid #878e91;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.info__cvv:hover .info__cvv_card {
+  display: block;
+  z-index: 10;
+}
+.info__cvv_line {
+  position: relative;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background-color: #878e91;
+}
+.info__cvv_line span {
+  display: inline-block;
+  width: 157px;
+  float: left;
+  margin-top: 45px;
+}
+.info__cvv_cvv {
+  float: right;
+  margin: -5px 15px 0 0;
+  padding: 2px 7px;
+  font-size: 16px;
+  font-size: 16px;
+  color: #000;
+  border: 2px solid #878e91;
+  border-radius: 5px;
+}
+.cod {
+  height: 55px;
+  margin-top: 18px;
+  background-color: #FDD920;
+}
+#cvv {
+  width: 95px;
+  height: 40px;
+  text-align: center;
+  float: right;
+  margin-right: 25px;
+  margin-top: 6px;
+  line-height: 55px;
+  border: 2px solid #FFD920;
+  outline: none;
+  border-radius: 10px;
+}
+#cvv:focus {
+  border: 2px solid #208648;
+}
+.cod span {
+  color: #3d3d3d;
+  font-size: 15px;
+  float: right;
+  margin-right: 15px;
+  line-height: 55px;
+}
+.buttoring {
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+}
+#button,
+#button_privat24 {
+  width: 100%;
+  border: 2px solid #208648;
+  border-radius: 13px;
+  color: #208648;
+  font-weight: 500;
+  display: inline-block;
+  font-size: 22px;
+  line-height: 36px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  zoom: 1;
+  margin-left: calc(50% - 100px);
+  background-color: transparent;
+  margin-top: 40px;
+  outline: none;
+}
+#button:hover,
+#button_privat24:hover {
+  cursor: pointer;
+  -webkit-transition: .3s ease-out 0.1s;
+  -moz-transition: .3s ease-out 0.1s;
+  -o-transition: .3s ease-out 0.1s;
+  transition: .3s ease-out 0.1s;
+  background-color: #208648;
+  color: #fff;
+}
+#button:active #button_privat24:active {
+  background-color: #74b02cc7;
+}
+
+
+/*PRIVAT*/
+
+.privat {
+  width: 100%;
+  height: auto;
+  display: none;
+  margin: 10px auto;
+}
+.privat.visible {
+  display: block;
+}
+.privat img {
+  vertical-align: middle;
+  height: 50px;
+  width: 50px;
+  margin: 0 auto;
+  display: block;
+}
+.privat h5 {
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
+.privat .privat__content {
+  width: 215px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  vertical-align: middle;
+}
+
+/*END PRIVAT*/
+.support {
+  display: block;
+  width: 90%;
+  height: 150px;
+  float: left;
+  font-size: 14px;
+}
+.logo_mps {
+  display: block;
+  width: 50%;
+  height: 150px;
+  float: left;
+  font-size: 14px;
+  margin-top: 58px;
+}
+.logo_mps img {
+  margin-top: 50px;
+  float: right;
+}
+#mc {
+  width: 68px;
+  margin-left: 16px;
+  margin-top: 41px;
+}
+#visa {
+  width: 80px;
+  margin-left: 16px;
+  margin-top: 42px;
+}
+#v_sc {
+  width: 64px;
+  margin-top: 42px;
+  margin-left: 16px;
+}
+#mc_sc {
+  width: 75px;
+}
+
+/*end card*/
+
+
+/*ERROR*/
+.error-payment {
+  color: red;
+  position: relative;
+  font-size: 14px;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  height: auto;
+}
+label.error {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: red;
+  font-size: 75%;
+  float: left;
+  width: 120px;
+  display: block;
+  z-index: 999;
+}
+#card_num-error {
+  width: auto;
+  top: 107px;
+  left: 20px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+#cardexp-error {
+  width: auto;
+  top: 175px;
+  left: 20px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+#cvv-error {
+  width: auto;
+  float: none;
+  left: 170px;
+  top: 175px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+#cardcvv-rec-error {
+  float: right;
+  left: inherit;
+}
+@media only screen and (min-width: 611px) and (max-width: 805px) {
+.header {
+  width: 95%;
+}
+.content {
+  width: 95%;
+}
+.card {
+  height: 375px;
+}
+.card_top {
+  z-index: 2;
+}
+.card_bg {
+  margin-top: -134px;
+  z-index: 1;
+}
+button {
+  margin-top: 38px;
+}
+.support {
+  font-size: 12px;
+}
+#mc,
+#visa,
+#v_sc {
+  margin-left: 1px;
+}
+}
+
+@media only screen and (max-width: 610px) {
+.header,
+.content {
+  width: 90%;
+}
+.header {
+  display: flex;
+  justify-content: center;
+}
+.header img {
+  align-self: center;
+}
+.logo-platon {
+  display: none;
+}
+.p_page {
+  width: 98%;
+  margin-top: 0px;
+}
+.notice {
+  margin-top: 5px;
+  font-size: 12px
+}
+.info {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.company {
+  width: 58px;
+}
+.company_name {
+  width: 40px;
+}
+.discription {
+  width: 80px;
+}
+.information {
+  height: 20px;
+  margin-bottom: 20px;
+}
+.information img {
+  width: 20px;
+}
+.label {
+  line-height: 20px;
+}
+.card {
+  height: auto;
+}
+.card_top,
+.card_bg {
+  width: 99%;
+  height: auto;
+}
+.card_top {
+  margin-bottom: 20px;
+}
+.numbercard,
+.datecard {
+  width: 90%;
+  margin: 20px auto;
+}
+#card_num {
+  width: 99%;
+  margin: 0 auto;
+  padding: 0;
+  padding-left: 5px;
+  margin-left: -5px;
+}
+#card_num-error {
+  top: 68px;
+}
+.mps {
+  top: 28px;
+  float: right;
+  margin-right: 5px;
+  right: 30px;
+  left: auto;
+}
+#card_exp_month,
+#card_exp_year {
+  width: 45%;
+  float: left;
+}
+#card_exp_month {
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 0px;
+  margin-left: -5px;
+}
+#slash {
+  width: 5%;
+  margin-left: 0;
+  float: left;
+  text-align: center;
+}
+#card_exp_year {
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 0px;
+  margin-left: 0px;
+}
+#cardexp-error {}
+.line_bg {
+  margin: 20px auto;
+}
+.info__cvv {
+  top: 115px;
+}
+.cod {
+  margin-bottom: 20px;
+}
+button {
+  width: 80%;
+  margin: 5px auto;
+  display: block;
+}
+.support,
+.logo_mps {
+  width: 100%;
+  margin-top: 10px;
+  height: auto;
+  font-size: 10px;
+}
+.privat h5 {
+  width: 90%;
+}
+#mc,
+#visa,
+#v_sc {
+  margin-left: 0px;
+}
+/*ERROR*/
+#card_num-error {
+  top: 68px;
+}
+#cardexp-error {
+  top: 135px;
+}
+#cvv-error {
+  top: 147px;
+  left: 265px;
+}
+}
+
+@media only screen and (min-width: 300px) and (max-width: 432px) {
+#card_exp_month,
+#card_exp_year {
+  width: 44%;
+}
+}

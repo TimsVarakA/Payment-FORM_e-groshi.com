@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Repayment</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="logo-mer">
+          <a href="https://e-groshi.com/" title="Е-Грошi" target="_blank"> <img src="images/egrlogo.png" alt="Е-Грошi"></a>
+        </div>
+        <div class="logo-platon">
+          <a href="https://platon.ua" title="Platon" target="_blank"> <img src="images/logo_platon.png" alt="Platon"></a>
+        </div>
+        
+      </div>
+      <div class="content">
+        <div class="p_page">
+          <h1>Repayment</h1>
+          <div class="lang">
+            <a href="index_ru.html" title="RU" class="ru img"></a>
+            <a href="index_ua.html" title="UA" class="ua img"></a>
+            <a href="index_en.html" title="EN" class="en img selected"></a>
+          </div>
+          <p class="verif-info">Enter your card details. On the map a random amount of up to 1 UAH will be blocked. It will be unlocked after a few minutes.</p>
+          <div class="info">
+            <div class="line">
+              <span class="name">Company</span>
+              <span class="value"><strong>e-groshi.com</strong></span>
+            </div>
+            <div class="line">
+              <span class="name">Order number</span>
+              <span class="value">00125</span>
+            </div>
+            <div class="line">
+              <span class="name">Description</span>
+              <span class="value">Проверка карты по договору №1251 от 01.01.2018.</span>
+            </div>
+            <div class="line" style="padding-bottom:10px">
+              <span class="name">Amount</span>
+              <span class="price">100.00 UAH</span>
+            </div>
+            <input type="hidden" name="amount">
+          </div>
+          <div class="spin"></div>
+          <div class="error-payment"></div>
+          <div class="tabs__btns">
+            <button data-content="content1" class="payment active">
+              <img src="images/card_vm.png" alt="Visa, Mastercard"><span>Visa, Mastercard</span>
+            </button>
+            <button data-content="content2" class="payment">
+              <img src="images/privat.png" alt="Privat24">
+            </button>
+          </div>
+          <div class="tabs__content">
+            <!-- card -->
+            <div class="card" id="content1">
+              <form action="#" method="post" class="cardpay" id="process">
+                <div class="card_top">
+                  <div class="numbercard" >
+                    <input type="tel" id="card_num" name="card_num" placeholder="Card number" autocomplete="off" pattern="[0-9]*" onkeyup="if(this.value.length >= 16){document.getElementById('month').focus();}"/>
+                    <div class="mps cards"><img src="images/card.png"></div>
+                    <div class="mps visa"><img src="images/m_visa.svg" alt=""></div>
+                    <div class="mps mastercard"><img src="images/m_mastercard.svg"></div>
+                    <div class="mps maestro"><img src="images/m_maestro.svg"></div>
+                  </div>
+                  <div class="datecard" id="datecard">
+                    <input type="tel" id="card_exp_month" name="card_exp_month" placeholder="Month" autocomplete="off" minlength="2" maxlength="2" pattern="[0-9]*" onkeyup="if(this.value.length >= 2){document.getElementById('year').focus();}"/>
+                    <p id="slash">/</p>
+                    <input type="tel" id="card_exp_year" name="card_exp_year" placeholder="Year" autocomplete="off" minlength="4" maxlength="4" pattern="[0-9]*" onkeyup="if(this.value.length >= 4){document.getElementById('cvv').focus();}"/>
+                  </div>
+                </div>
+                <div class="card_bg">
+                  <div class="line_bg"></div>
+                  <div class="info__cvv">
+                    <span>?</span>
+                    <div class="info__cvv_card">
+                      <div class="info__cvv_line">
+                        <span>The last three digits on the back of the credit card</span>
+                      </div>
+                      <div class="info__cvv_cvv">123</div>
+                    </div>
+                  </div>
+                  <div class="cod">
+                    <input type="password" name="cvv" id= "cvv" placeholder="XXX" maxlength="3" pattern="[0-9]*" onkeyup="return controlcvv(this)"  />
+                    <span> CVC2/CVV2:</span>
+                  </div>
+                </div>
+                <div class="buttoring">
+                  <input type="submit" id="button" value="Pay">
+                </div>
+              </form>
+            </div>
+            <!-- /card -->
+            <!-- begin privat  -->
+            <div id="content2" class="privat">
+              <div class="privat__logo">
+                <img src="images/privat-logo.png" alt="Логотип privat">
+              </div>
+              <h5>Chose this method payment, you will be redirected to Privat24 page.</h5>
+              <div class="privat__content">
+                <div class="buttoring">
+                  <input type="submit" id="button_privat24" value="Оплатить">
+                </div>
+              </div>
+            </div>
+            <!-- end privat -->
+          </div>
+          
+          <div class="support">In case of unsuccessful payment, please contact Platon Customer Support Service by numbers:<br>
+            <strong>0(800)750-504</strong> - free from fixed-line and mobile phones of all Ukrainian operators;<br>
+            <strong>+38(044)339-99-04</strong> - for international calls;<br> or email us <a href="http://support.platon.ua/open.php" target="_blank">support@platonline.com</a><br>
+            <span class="color">*</span>Your IP address is logged for fraud prevention.<br>
+            <span class="color">*</span>Fraud will be prosecuted to the fullest extent of the law.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--JS-->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.creditCardValidator.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/validator-1.17.0.min.js"></script>
+    <script type="text/javascript" src="js/lib.js"></script>
+    <script>
+      $(document).ready(function() {
+        /*TABS*/
+        $('.tabs__btns button').on('click', function () {
+          var id = $(this).attr('data-content');
+          switchTab(id);
+        });
+        switchTab('content1');
+      });
+      
+      function switchTab(tabId) {
+        if (tabId == 'content1') {
+          $('input[name="payment"]').val("CC");
+        } else {
+          $('input[name="payment"]').val("P24");
+        }
+        $('.visible').removeClass('visible').fadeOut();
+        $('.active').removeClass('active');
+        $('#' + tabId).addClass('visible');
+        $('.tabs__btns button[data-content="' + tabId + '"]').addClass('active');
+      }
+      /*END TABS*/
+      $('#process').validate({
+        submitHandler: function(form) {
+          $('#button').attr('disabled', 'disabled');
+          $(".card").fadeTo("fast",0.1);
+          form.submit();
+        },
+        groups: {
+          card_num: 'card_num',
+          cardexp: 'card_exp_month card_exp_year',
+        },
+        errorPlacement: function(error, element) {
+          if (element.attr('name') == 'card_exp_month' || element.attr('name') == 'card_exp_year') {
+            error.insertAfter('#datecard');
+          } else if (element.attr('name') == 'card_num') {
+            error.insertAfter('#card_num');
+          } else {
+            error.insertAfter(element);
+          }
+        },
+        rules: {
+          card_num: {
+            required: true,
+            digits: true,
+            minlength: 16,
+          },
+          card_exp_month: {
+            required: true,
+            minlength: 2,
+          },
+          card_exp_year: {
+            required: true,
+            minlength: 4,
+          },
+          cvv: {
+            required: true,
+            minlength: 3,
+            maxlength: 3,
+            digits: true
+          },
+        },
+        messages: {
+          card_num: {
+            required: "Please enter the card number",
+            digits: "Please enter digits",
+            minlength: "Please enter 16 digits credit card",
+          },
+          card_exp_month: {
+            required: "Please select a card expiration date",
+            minlength: "Please enter 2 digits"
+          },
+          card_exp_year: {
+            required: "Please select a card expiration date",
+            minlength: "Please enter 4 digits"
+          },
+          cvv: {
+            required: "Please enter CVV/CVC code",
+            minlength: "The secret code must consist of at least 3 digits",
+            maxlength: "The secret code must consist of no more than 3 digits",
+            digits: "Please enter digits",
+          },
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Оплата замовлення</title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<!-- desktop -->
+	<link href="css/mobile.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width:610px)">
+	<!-- mobile -->
+	
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jqery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script type="text/javascript" src="js/jquery.groupinputs.js"></script>
+	
+</head>
+  <body>
+  <div class="wrapper">
+	  <div class="header">
+		  <a href="#" id="logo" target="_blank"></a><a href="" id="logo1" target="_blank"></a>
+	  </div>
+    <div class="content">
+      <div class="p_page">
+          <div class="lang">
+          	<a href="" id="ru" title="RU"></a>
+            <a href="" id="ua" title="UA" class="active"></a>
+            <a href="" id="en" title="EN"></a>
+            </div>
+        <h1>Оплата замовлення</h1>
+        <div class="info">
+          <div class="line">
+            <span class="name">Компанія</span>
+            <span class="value"><strong>Тестова</strong></span>
+          </div>
+          <div class="line">
+            <span class="name">Номер замовлення</span>
+            <span class="value">123456</span>
+          </div>
+          <div class="line" style="padding-bottom:10px">
+            <span class="name">Опис</span>
+            <span class="value">Сплата послуги</span>
+          </div>
+          <div class="line">
+            <span class="name" style="padding-top:3px">Сума</span>
+            <span class="price">454.00 грн.</span>
+          </div>
+        </div>
+        <div class="push" style="height:15px"></div>
+		<div class="spin"></div>
+        <div class="card">
+          <div class="namecard_rekarring">Вася Пупкін</div>
+          <div class="numbercard_rekarring">462773******2907</div>
+		  
+             <div id="img"></div>
+			
+          <form action="" name="formnumber" id="form">
+            <div class="cod">
+            <a class="help" onmouseout="closeCard();" onmouseover="openCard(event);" style="vertical-align:bottom; cursor:pointer;"></a>
+              <span> CVC2/CVV2:</span>
+              <input autofocus type="password" autocomplete="off" maxlength="3" pattern="[0-9]*" onkeyup="if(this.value.length >= 3){document.getElementById('button').focus();}"  />
+            </div>
+            <a href="" onClick=" document.getElementById('form').submit();" id="button">Сплатити</a>
+          </form>
+        </div>
+        <div class="push" style="height:5px"></div>
+		
+		<div class="support">
+					В разі неуспішного платежу зверніться в Службу підтримки компанії Platon за номером: <br>
+					<strong>+38(044)339-99-04</strong> або надішліть запит
+					<a href="http://support.platon.ua/open.php">support@platonline.com</a>
+		</div>
+        <div class="ip">
+          <span class="color">*</span>Ваша IP-адреса моніториться для запобігання шахрайства.<br>
+          <span class="color">*</span>Шахрайство переслідується за законом. 
+        </div>
+      </div>
+      <div class="push"></div>
+    </div> 
+    </div> 
+	  <div class="footer">
+		  <span class="comodo"></span>
+		  <span class="copyright">© Platon <?php echo date('Y')?>, ТОВ «Платежі онлайн»<br> Київ, вул.Воздвиженська, 10Б, оф.22</span>
+	  </div>
+                <div id="help_card">
+                  <h3>Як знайти CVV / CVC по кредитній карті</h3><br>
+                  <p > CVV / CVC код використовується для підтвердження того, що під час транзакції була використана справжня кредитна карта. Дана процедура стала обов'язковою для он-лайн транзакцій з 1 січня 2003р.</p> 
+                  <p >У випадку з VISA і Master Card, даний код являє собою Код Безпеки, що складається з трьох цифр, нанесених на тильній стороні карти.</p>
+                  <br>
+                  <div style="text-align: center;"><img src="images/help_card.png" width="165" height="103" /></div>
+                </div>              
+    
+  </body>
+</html>

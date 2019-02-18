@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Оплата заказа</title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<!-- desktop -->
+	<link href="css/mobile.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width:610px)">
+	<!-- mobile -->
+	
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jqery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/lib.js"></script>
+	<script type="text/javascript" src="js/jquery.groupinputs.js"></script>
+	
+</head>
+  <body>
+  <div class="wrapper">
+	  <div class="header">
+		  <a href="#" id="logo" target="_blank"></a><a href="" id="logo1" target="_blank"></a>
+	  </div>
+    <div class="content">
+      <div class="p_page">
+          <div class="lang">
+          	<a href="" id="ru" title="RU" class="active"></a>
+            <a href="" id="ua" title="UA"></a>
+            <a href="" id="en" title="EN"></a>
+          </div>
+        <h1>Оплата заказа</h1>
+        <div class="info">
+          <div class="line">
+            <span class="name">Компания</span>
+            <span class="value"><strong>Test Company</strong></span>
+          </div>
+          <div class="line">
+            <span class="name">Номер заказа</span>
+            <span class="value">456789</span>
+          </div>
+          <div class="line">
+            <span class="name">Описание</span>
+            <span class="value">Оплата заказа</span>
+          </div>
+          <div class="line">
+            <span class="name" style="padding-top:3px">Сумма</span>
+            <span class="price">454.00 грн.</span>
+          </div>
+        </div>
+        <div class="push" style="height:15px"></div>
+		<div class="spin"></div>
+        <div class="card">
+          <div class="namecard_rekarring">Вася Пупкин</div>
+          <div class="numbercard_rekarring">462773******2907</div>
+		  
+             <div id="img"></div>
+			
+           <form action="" name="formnumber" id="form">
+            <div class="cod">
+            <a class="help" onmouseout="closeCard();" onmouseover="openCard(event);" style="vertical-align:bottom; cursor:pointer;"></a>
+              <span> CVC2/CVV2:</span>
+              <input autofocus type="password" autocomplete="off" maxlength="3" pattern="[0-9]*" onkeyup="if(this.value.length >= 3){document.getElementById('button').focus();}"  />
+            </div>
+            <a href="" onClick=" document.getElementById('form').submit();" id="button">Оплатить</a>
+          </form>
+        </div>
+        <div class="push" style="height:5px"></div>
+		
+		<div class="support"> В случае неуспешного платежа обратитесь в Службу поддержки Platon по номеру: <br>
+							<strong>+38(044)339-99-04</strong> или напишите нам
+							<a href="http://support.platon.ua/open.php">support@platonline.com</a>
+		</div>
+        <div class="ip">
+          <span class="color">*</span>Ваш IP-адрес мониторится для  предотвращения  мошенничества.<br>
+          <span class="color">*</span>Мошенничество преследуется по закону. 
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+    </div>  
+    <div class="footer">
+	  <span class="comodo"></span>
+      <span class="copyright">© Platon <?php echo date('Y')?>, ООО «Платежи онлайн»<br> Киев, ул.Воздвиженская, 10Б, оф.22</span>
+	</div>
+                <div id="help_card">
+                  <h3>Как найти CVV / CVC по кредитной карте</h3><br>
+                  <p > CVV / CVC код используется для подтверждения того, что во время транзакции была использована подлинная кредитная карта. Данная процедура стала обязательной для он-лайн транзакций с 1 января 2003г.</p> 
+                  <p >В случае с VISA и Master Card, данный код представляет собой Код Безопасности, состоящий из трёх цифр, нанесенных на тыльной стороне карты.</p>
+                  <br>
+                  <div style="text-align: center;"><img src="images/help_card.png" width="165" height="103" /></div>
+                </div>              
+    
+  </body>
+</html>

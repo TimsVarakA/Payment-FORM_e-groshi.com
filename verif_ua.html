@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Перевірка картки</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="logo-mer">
+          <a href="https://e-groshi.com/" title="Е-Грошi" target="_blank"> <img src="images/egrlogo.png" alt="Е-Грошi"></a>
+        </div>
+        <div class="logo-platon">
+          <a href="https://platon.ua" title="Platon" target="_blank"> <img src="images/logo_platon.png" alt="Platon"></a>
+        </div>
+        
+      </div>
+      <div class="content">
+        <div class="p_page">
+          <h1>Перевірка картки</h1>
+          <div class="lang">
+            <a href="index_ru.html" title="RU" class="ru img"></a>
+            <a href="index_ua.html" title="UA" class="ua img selected"></a>
+            <a href="index_en.html" title="EN" class="en img"></a>
+          </div>
+          <p class="verif-info">Введіть дані своєї картки. На картці буде заблоковано випадкова сума до 1грн. Вона буде розблокована через декілька хвилин.</p>
+          <div class="info">
+            <div class="line">
+              <span class="name">Компанія</span>
+              <span class="value"><strong>e-groshi.com</strong></span>
+            </div>
+            <div class="line">
+              <span class="name">Ордер</span>
+              <span class="value">00125</span>
+            </div>
+            <div class="line" style="padding-bottom:10px">
+              <span class="name">Опис</span>
+              <span class="value">Перевірка картки по договору №1251 от 01.01.2018.</span>
+            </div>
+            <input type="hidden" name="amount">
+          </div>
+          <div class="push" style="height:15px"></div>
+          <div class="spin"></div>
+          <div class="error-payment"></div>
+          <div class="card_ver"><!-- card -->
+            <form action="#" method="post" class="cardpay" id="process">
+              <div class="card_top">
+                <div class="numbercard" >
+                  <input type="tel" id="card_num" name="card_num" placeholder="Номер картки" autocomplete="off" pattern="[0-9]*" onkeyup="if(this.value.length >= 16){document.getElementById('month').focus();}"/>
+                  <div class="mps cards"><img src="images/card.png"></div>
+                  <div class="mps visa"><img src="images/m_visa.svg" alt=""></div>
+                  <div class="mps mastercard"><img src="images/m_mastercard.svg"></div>
+                  <div class="mps maestro"><img src="images/m_maestro.svg"></div>
+                </div>
+                <div class="datecard" id="datecard">
+                  <input type="tel" id="card_exp_month" name="card_exp_month" placeholder="Місяць" autocomplete="off" minlength="2" maxlength="2" pattern="[0-9]*" onkeyup="if(this.value.length >= 2){document.getElementById('year').focus();}"/>
+                  <p id="slash">/</p>
+                  <input type="tel" id="card_exp_year" name="card_exp_year" placeholder="Рік" autocomplete="off" minlength="4" maxlength="4" pattern="[0-9]*" onkeyup="if(this.value.length >= 4){document.getElementById('cvv').focus();}"/>
+                </div>
+              </div>
+              <div class="card_bg">
+                <div class="line_bg"></div>
+                <div class="info__cvv">
+                  <span>?</span>
+                  <div class="info__cvv_card">
+                    <div class="info__cvv_line">
+                      <span>Останні три цифри на звороті картки</span>
+                    </div>
+                    <div class="info__cvv_cvv">123</div>
+                  </div>
+                </div>
+                <div class="cod">
+                  <input type="password" name="cvv" id= "cvv" placeholder="XXX" maxlength="3" pattern="[0-9]*" onkeyup="return controlcvv(this)"  />
+                  <span> CVC2/CVV2:</span>
+                </div>
+              </div>
+              <div class="buttoring">
+                <input type="submit" id="button" value="Підтвердити">
+              </div>
+            </form>
+          </div><!-- /card -->
+          <div class="push" style="height:5px"></div>
+          <div class="support"> В разі неуспішного платежу зверніться в Службу підтримки компанії Platon за номерами:<br>
+            <strong>0(800)750-504</strong> - безкоштовно зі стаціонарних і мобільних телефонів усіх операторів України;<br>
+            <strong>+38(044)339-99-04</strong> - для міжнародних дзвінків;<br> або надішліть запит на <a href="http://support.platon.ua/open.php" target="_blank">support@platonline.com</a><br>
+            <span class="color">*</span>Ваша IP-адреса моніториться для запобігання шахрайства.<br>
+            <span class="color">*</span>Шахрайство переслідується за законом.
+          </div>
+        </div>
+      </div>
+    </div>  
+    <!--JS-->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.creditCardValidator.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/validator-1.17.0.min.js"></script>
+    <script type="text/javascript" src="js/lib.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#process').validate({
+          submitHandler: function(form) {
+            $('#button').attr('disabled', 'disabled');
+            $(".card_ver").fadeTo("fast",0.1);
+            form.submit();
+          },
+          groups: {
+            card_num: 'card_num',
+            cardexp: 'card_exp_month card_exp_year',
+          },
+          errorPlacement: function(error, element) {
+            if (element.attr('name') == 'card_exp_month' || element.attr('name') == 'card_exp_year') {
+              error.insertAfter('#datecard');
+            } else if (element.attr('name') == 'card_num') {
+              error.insertAfter('#card_num');
+            } else {
+              error.insertAfter(element);
+            }
+          },
+          rules: {
+            card_num: {
+              required: true,
+              digits: true,
+              minlength: 16,
+            },
+            card_exp_month: {
+              required: true,
+              minlength: 2,
+            },
+            card_exp_year: {
+              required: true,
+              minlength: 4,
+            },
+            cvv: {
+              required: true,
+              minlength: 3,
+              maxlength: 3,
+              digits: true
+            },
+          },
+          messages: {
+            card_num: {
+              required: "Будь ласка, введіть номер карти",
+              digits: "Будь ласка, введіть число",
+              minlength: "Будь ласка, введіть 16 символів картки",
+            },
+            card_exp_month: {
+              required: "Будь ласка, введіть термін дії",
+              minlength: "Будь ласка, введіть 2 символи"
+            },
+            card_exp_year: {
+              required: "Будь ласка, введіть термін дії",
+              minlength: "Будь ласка, введіть 4 символи"
+            },
+            cvv: {
+              required: "Будь ласка, введіть секретний код",
+              minlength: "Секретний код повинен складатися мінімум з 3-х символів",
+              maxlength: "Секретний код повинен складатися не більше ніж з 3-х символів",
+              digits: "Будь ласка, введіть число",
+            },
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
